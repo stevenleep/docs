@@ -1,91 +1,588 @@
 {
-  "$schema": "https://mintlify.com/schema.json",
-  "name": "Starter Kit",
+  "name": "Infisical",
+  "openapi": "https://app.infisical.com/api/docs/json",
   "logo": {
     "dark": "/logo/dark.svg",
-    "light": "/logo/light.svg"
+    "light": "/logo/light.svg",
+    "href": "https://infisical.com"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/favicon.png",
   "colors": {
-    "primary": "#0D9373",
-    "light": "#07C983",
-    "dark": "#0D9373",
+    "primary": "#26272b",
+    "light": "#97b31d",
+    "dark": "#A1B659",
+    "ultraLight": "#E7F256",
+    "ultraDark": "#8D9F4C",
+    "background": {
+      "light": "#ffffff",
+      "dark": "#0D1117"
+    },
     "anchors": {
-      "from": "#0D9373",
-      "to": "#07C983"
+      "from": "#000000",
+      "to": "#707174"
     }
+  },
+  "modeToggle": {
+    "default": "light",
+    "isHidden": true
+  },
+  "feedback": {
+    "suggestEdit": true,
+    "raiseIssue": true,
+    "thumbsRating": true
+  },
+  "api": {
+    "baseUrl": [
+      "https://app.infisical.com",
+      "http://localhost:8080"
+    ]
   },
   "topbarLinks": [
     {
-      "name": "Support",
-      "url": "mailto:hi@mintlify.com"
+      "name": "Log In",
+      "url": "https://app.infisical.com/login"
     }
   ],
   "topbarCtaButton": {
-    "name": "Dashboard",
-    "url": "https://dashboard.mintlify.com"
+    "name": "Start for Free",
+    "url": "https://app.infisical.com/signup"
   },
   "tabs": [
     {
+      "name": "Integrations",
+      "url": "integrations"
+    },
+    {
+      "name": "CLI",
+      "url": "cli"
+    },
+    {
       "name": "API Reference",
       "url": "api-reference"
-    }
-  ],
-  "anchors": [
-    {
-      "name": "Documentation",
-      "icon": "book-open-cover",
-      "url": "https://mintlify.com/docs"
     },
     {
-      "name": "Community",
-      "icon": "slack",
-      "url": "https://mintlify.com/community"
+      "name": "SDKs",
+      "url": "sdks"
     },
     {
-      "name": "Blog",
-      "icon": "newspaper",
-      "url": "https://mintlify.com/blog"
+      "name": "Changelog",
+      "url": "changelog"
     }
   ],
   "navigation": [
     {
-      "group": "Get Started",
+      "group": "Getting Started",
       "pages": [
-        "introduction",
-        "quickstart",
-        "development"
+        "documentation/getting-started/introduction",
+        {
+          "group": "Quickstart",
+          "pages": [
+            "documentation/guides/local-development",
+            "documentation/guides/staging",
+            "documentation/guides/production"
+          ]
+        },
+        {
+          "group": "Guides",
+          "pages": [
+            "documentation/guides/introduction",
+            "documentation/guides/node",
+            "documentation/guides/python",
+            "documentation/guides/nextjs-vercel"
+          ]
+        }
       ]
     },
     {
-      "group": "Essentials",
+      "group": "Platform",
       "pages": [
-        "essentials/markdown",
-        "essentials/code",
-        "essentials/images",
-        "essentials/settings",
-        "essentials/navigation",
-        "essentials/reusable-snippets"
+        "documentation/platform/organization",
+        "documentation/platform/project",
+        "documentation/platform/folder",
+        {
+          "group": "Secrets",
+          "pages": [
+            "documentation/platform/secret-versioning",
+            "documentation/platform/pit-recovery",
+            "documentation/platform/secret-reference",
+            "documentation/platform/webhooks"
+          ]
+        },
+        {
+          "group": "Identities",
+          "pages": [
+            "documentation/platform/identities/overview",
+            "documentation/platform/identities/user-identities",
+            "documentation/platform/identities/machine-identities"
+          ]
+        },
+        {
+          "group": "Access Control",
+          "pages": [
+            "documentation/platform/access-controls/overview",
+            "documentation/platform/access-controls/role-based-access-controls",
+            "documentation/platform/access-controls/additional-privileges",
+            "documentation/platform/access-controls/temporary-access",
+            "documentation/platform/access-controls/access-requests",
+            "documentation/platform/pr-workflows",
+            "documentation/platform/audit-logs"
+          ]
+        },
+        {
+          "group": "Secret Rotation",
+          "pages": [
+            "documentation/platform/secret-rotation/overview",
+            "documentation/platform/secret-rotation/sendgrid",
+            "documentation/platform/secret-rotation/postgres",
+            "documentation/platform/secret-rotation/mysql",
+            "documentation/platform/secret-rotation/aws-iam"
+          ]
+        },
+        {
+          "group": "Dynamic Secrets",
+          "pages": [
+            "documentation/platform/dynamic-secrets/overview",
+            "documentation/platform/dynamic-secrets/postgresql"
+          ]
+        }
       ]
     },
     {
-      "group": "API Documentation",
+      "group": "Authentication Methods",
       "pages": [
-        "api-reference/introduction"
+        "documentation/platform/auth-methods/email-password",
+        "documentation/platform/token",
+        "documentation/platform/identities/universal-auth",
+        "documentation/platform/mfa",
+        {
+          "group": "SSO",
+          "pages": [
+            "documentation/platform/sso/overview",
+            "documentation/platform/sso/google",
+            "documentation/platform/sso/github",
+            "documentation/platform/sso/gitlab",
+            "documentation/platform/sso/okta",
+            "documentation/platform/sso/azure",
+            "documentation/platform/sso/jumpcloud",
+            "documentation/platform/sso/keycloak-saml",
+            "documentation/platform/sso/google-saml"
+          ]
+        },
+        {
+          "group": "LDAP",
+          "pages": [
+            "documentation/platform/ldap/overview",
+            "documentation/platform/ldap/jumpcloud",
+            "documentation/platform/ldap/general"
+          ]
+        },
+        {
+          "group": "SCIM",
+          "pages": [
+            "documentation/platform/scim/overview",
+            "documentation/platform/scim/okta",
+            "documentation/platform/scim/azure",
+            "documentation/platform/scim/jumpcloud"
+          ]
+        }
       ]
     },
     {
-      "group": "Endpoint Examples",
+      "group": "Self-host Infisical",
       "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/delete"
+        "self-hosting/overview",
+        "self-hosting/configuration/requirements",
+        {
+          "group": "Installation methods",
+          "pages": [
+            "self-hosting/deployment-options/standalone-infisical",
+            "self-hosting/deployment-options/docker-compose",
+            "self-hosting/deployment-options/kubernetes-helm"
+          ]
+        },
+        "self-hosting/configuration/envars",
+        {
+          "group": "Guides",
+          "pages": [
+            "self-hosting/configuration/schema-migrations",
+            "self-hosting/guides/mongo-to-postgres"
+          ]
+        },
+        "self-hosting/ee",
+        "self-hosting/faq"
+      ]
+    },
+    {
+      "group": "Command line",
+      "pages": [
+        "cli/overview",
+        "cli/usage",
+        {
+          "group": "Core commands",
+          "pages": [
+            "cli/commands/login",
+            "cli/commands/init",
+            "cli/commands/run",
+            "cli/commands/secrets",
+            "cli/commands/export",
+            "cli/commands/service-token",
+            "cli/commands/vault",
+            "cli/commands/user",
+            "cli/commands/reset",
+            {
+              "group": "infisical scan",
+              "pages": [
+                "cli/commands/scan",
+                "cli/commands/scan-git-changes",
+                "cli/commands/scan-install"
+              ]
+            }
+          ]
+        },
+        "cli/scanning-overview",
+        "cli/project-config",
+        "cli/faq"
+      ]
+    },
+    {
+      "group": "Infrastructure Integrations",
+      "pages": [
+        {
+          "group": "Container orchestrators",
+          "pages": [
+            "integrations/platforms/kubernetes",
+            "integrations/platforms/docker-swarm-with-agent",
+            "integrations/platforms/ecs-with-agent"
+          ]
+        },
+        "integrations/platforms/infisical-agent",
+        {
+          "group": "Docker",
+          "pages": [
+            "integrations/platforms/docker-intro",
+            "integrations/platforms/docker",
+            "integrations/platforms/docker-pass-envs",
+            "integrations/platforms/docker-compose"
+          ]
+        },
+        "integrations/frameworks/terraform",
+        "integrations/platforms/ansible"
+      ]
+    },
+    {
+      "group": "Native Integrations",
+      "pages": [
+        {
+          "group": "AWS",
+          "pages": [
+            "integrations/cloud/aws-parameter-store",
+            "integrations/cloud/aws-secret-manager"
+          ]
+        },
+        "integrations/cloud/vercel",
+        "integrations/cloud/azure-key-vault",
+        "integrations/cloud/gcp-secret-manager",
+        {
+          "group": "Cloudflare",
+          "pages": [
+            "integrations/cloud/cloudflare-pages",
+            "integrations/cloud/cloudflare-workers"
+          ]
+        },
+        "integrations/cloud/heroku",
+        "integrations/cloud/render",
+        {
+          "group": "View more",
+          "pages": [
+            "integrations/cloud/digital-ocean-app-platform",
+            "integrations/cloud/netlify",
+            "integrations/cloud/railway",
+            "integrations/cloud/flyio",
+            "integrations/cloud/laravel-forge",
+            "integrations/cloud/supabase",
+            "integrations/cloud/northflank",
+            "integrations/cloud/hasura-cloud",
+            "integrations/cloud/terraform-cloud",
+            "integrations/cloud/qovery",
+            "integrations/cloud/hashicorp-vault",
+            "integrations/cloud/cloud-66",
+            "integrations/cloud/windmill"
+          ]
+        }
+      ]
+    },
+    {
+      "group": "CI/CD Integrations",
+      "pages": [
+        "integrations/cicd/jenkins",
+        "integrations/cicd/githubactions",
+        "integrations/cicd/gitlab",
+        "integrations/cicd/bitbucket",
+        "integrations/cloud/teamcity",
+        {
+          "group": "View more",
+          "pages": [
+            "integrations/cicd/circleci",
+            "integrations/cicd/travisci",
+            "integrations/cicd/codefresh",
+            "integrations/cloud/checkly"
+          ]
+        }
+      ]
+    },
+    {
+      "group": "Framework Integrations",
+      "pages": [
+        "integrations/frameworks/spring-boot-maven",
+        "integrations/frameworks/react",
+        "integrations/frameworks/vue",
+        "integrations/frameworks/express",
+        {
+          "group": "View more",
+          "pages": [
+            "integrations/frameworks/nextjs",
+            "integrations/frameworks/nestjs",
+            "integrations/frameworks/sveltekit",
+            "integrations/frameworks/nuxt",
+            "integrations/frameworks/gatsby",
+            "integrations/frameworks/remix",
+            "integrations/frameworks/vite",
+            "integrations/frameworks/fiber",
+            "integrations/frameworks/django",
+            "integrations/frameworks/flask",
+            "integrations/frameworks/laravel",
+            "integrations/frameworks/rails",
+            "integrations/frameworks/dotnet",
+            "integrations/platforms/pm2"
+          ]
+        }
+      ]
+    },
+    {
+      "group": "Build Tool Integrations",
+      "pages": [
+        "integrations/build-tools/gradle"
+      ]
+    },
+    {
+      "group": "",
+      "pages": [
+        "sdks/overview"
+      ]
+    },
+    {
+      "group": "SDK's",
+      "pages": [
+        "sdks/languages/node",
+        "sdks/languages/python",
+        "sdks/languages/java",
+        "sdks/languages/csharp"
+      ]
+    },
+    {
+      "group": "Overview",
+      "pages": [
+        "api-reference/overview/introduction",
+        "api-reference/overview/authentication",
+        {
+          "group": "Examples",
+          "pages": [
+            "api-reference/overview/examples/note",
+            "api-reference/overview/examples/integration"
+          ]
+        }
+      ]
+    },
+    {
+      "group": "Endpoints",
+      "pages": [
+        {
+          "group": "Users",
+          "pages": [
+            "api-reference/endpoints/users/me",
+            "api-reference/endpoints/users/my-organizations"
+          ]
+        },
+        {
+          "group": "Identities",
+          "pages": [
+            "api-reference/endpoints/identities/create",
+            "api-reference/endpoints/identities/update",
+            "api-reference/endpoints/identities/delete"
+          ]
+        },
+        {
+          "group": "Universal Auth",
+          "pages": [
+            "api-reference/endpoints/universal-auth/login",
+            "api-reference/endpoints/universal-auth/attach",
+            "api-reference/endpoints/universal-auth/retrieve",
+            "api-reference/endpoints/universal-auth/update",
+            "api-reference/endpoints/universal-auth/create-client-secret",
+            "api-reference/endpoints/universal-auth/list-client-secrets",
+            "api-reference/endpoints/universal-auth/revoke-client-secret",
+            "api-reference/endpoints/universal-auth/renew-access-token"
+          ]
+        },
+        {
+          "group": "Organizations",
+          "pages": [
+            "api-reference/endpoints/organizations/memberships",
+            "api-reference/endpoints/organizations/update-membership",
+            "api-reference/endpoints/organizations/delete-membership",
+            "api-reference/endpoints/organizations/list-identity-memberships",
+            "api-reference/endpoints/organizations/workspaces"
+          ]
+        },
+        {
+          "group": "Projects",
+          "pages": [
+            "api-reference/endpoints/workspaces/create-workspace",
+            "api-reference/endpoints/workspaces/delete-workspace",
+            "api-reference/endpoints/workspaces/get-workspace",
+            "api-reference/endpoints/workspaces/update-workspace",
+            "api-reference/endpoints/workspaces/invite-member-to-workspace",
+            "api-reference/endpoints/workspaces/remove-member-from-workspace",
+            "api-reference/endpoints/workspaces/memberships",
+            "api-reference/endpoints/workspaces/update-membership",
+            "api-reference/endpoints/workspaces/list-identity-memberships",
+            "api-reference/endpoints/workspaces/update-identity-membership",
+            "api-reference/endpoints/workspaces/delete-identity-membership",
+            "api-reference/endpoints/workspaces/workspace-key",
+            "api-reference/endpoints/workspaces/secret-snapshots",
+            "api-reference/endpoints/workspaces/rollback-snapshot"
+          ]
+        },
+        {
+          "group": "Environments",
+          "pages": [
+            "api-reference/endpoints/environments/create",
+            "api-reference/endpoints/environments/update",
+            "api-reference/endpoints/environments/delete"
+          ]
+        },
+        {
+          "group": "Folders",
+          "pages": [
+            "api-reference/endpoints/folders/list",
+            "api-reference/endpoints/folders/create",
+            "api-reference/endpoints/folders/update",
+            "api-reference/endpoints/folders/delete"
+          ]
+        },
+        {
+          "group": "Secret Tags",
+          "pages": [
+            "api-reference/endpoints/secret-tags/list",
+            "api-reference/endpoints/secret-tags/create",
+            "api-reference/endpoints/secret-tags/delete"
+          ]
+        },
+        {
+          "group": "Secrets",
+          "pages": [
+            "api-reference/endpoints/secrets/list",
+            "api-reference/endpoints/secrets/create",
+            "api-reference/endpoints/secrets/read",
+            "api-reference/endpoints/secrets/update",
+            "api-reference/endpoints/secrets/delete",
+            "api-reference/endpoints/secrets/attach-tags",
+            "api-reference/endpoints/secrets/detach-tags"
+          ]
+        },
+        {
+          "group": "Secret Imports",
+          "pages": [
+            "api-reference/endpoints/secret-imports/list",
+            "api-reference/endpoints/secret-imports/create",
+            "api-reference/endpoints/secret-imports/update",
+            "api-reference/endpoints/secret-imports/delete"
+          ]
+        },
+        {
+          "group": "Identity Specific Privilege",
+          "pages": [
+            "api-reference/endpoints/identity-specific-privilege/create-permanent",
+            "api-reference/endpoints/identity-specific-privilege/create-temporary",
+            "api-reference/endpoints/identity-specific-privilege/update",
+            "api-reference/endpoints/identity-specific-privilege/delete",
+            "api-reference/endpoints/identity-specific-privilege/find-by-slug",
+            "api-reference/endpoints/identity-specific-privilege/list"
+          ]
+        },
+        {
+          "group": "Integrations",
+          "pages": [
+            "api-reference/endpoints/integrations/create-auth",
+            "api-reference/endpoints/integrations/list-auth",
+            "api-reference/endpoints/integrations/find-auth",
+            "api-reference/endpoints/integrations/delete-auth",
+            "api-reference/endpoints/integrations/delete-auth-by-id",
+            "api-reference/endpoints/integrations/create",
+            "api-reference/endpoints/integrations/update",
+            "api-reference/endpoints/integrations/delete"
+          ]
+        },
+        {
+          "group": "Service Tokens",
+          "pages": [
+            "api-reference/endpoints/service-tokens/get"
+          ]
+        },
+        {
+          "group": "Audit Logs",
+          "pages": [
+            "api-reference/endpoints/audit-logs/export-audit-log"
+          ]
+        }
+      ]
+    },
+    {
+      "group": "Internals",
+      "pages": [
+        "internals/overview",
+        "internals/components",
+        "internals/flows",
+        "internals/security",
+        "internals/service-tokens"
+      ]
+    },
+    {
+      "group": "",
+      "pages": [
+        "changelog/overview"
+      ]
+    },
+    {
+      "group": "Contributing",
+      "pages": [
+        {
+          "group": "Getting Started",
+          "pages": [
+            "contributing/getting-started/overview",
+            "contributing/getting-started/code-of-conduct",
+            "contributing/getting-started/pull-requests",
+            "contributing/getting-started/faq"
+          ]
+        },
+        {
+          "group": "Contributing to platform",
+          "pages": [
+            "contributing/platform/developing",
+            "contributing/platform/backend/how-to-create-a-feature",
+            "contributing/platform/backend/folder-structure"
+          ]
+        },
+        {
+          "group": "Contributing to SDK",
+          "pages": [
+            "contributing/sdk/developing"
+          ]
+        }
       ]
     }
   ],
-  "footerSocials": {
-    "twitter": "https://twitter.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://www.linkedin.com/company/mintsearch"
+  "integrations": {
+    "intercom": "hsg644ru"
   }
 }
